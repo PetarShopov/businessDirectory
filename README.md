@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 http://localhost:3000 – Businesses List View.
 
-http://localhost:3000/:id – Business Details View.
+http://localhost:3000/business/:id – Business Details View.
 
 ## Available Scripts
 
