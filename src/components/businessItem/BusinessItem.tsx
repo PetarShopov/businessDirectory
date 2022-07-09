@@ -9,7 +9,7 @@ import {
     setCurrentBusiness
 } from "../../features/businessesView/businessesViewSlice";
 import { RoutingEnum } from "../../interfaces";
-import { CustomImage } from "../customImage/CustomImage";
+import { CustomImage } from "../shared/customImage/CustomImage";
 
 const StyledWrapper = styled.div`
     height: calc(100% - 60px);

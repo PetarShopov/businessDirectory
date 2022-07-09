@@ -4,10 +4,10 @@ import { BusinessItem } from './components/businessItem/BusinessItem';
 import { Header } from './components/header/Header';
 import { RoutingEnum } from './interfaces';
 import styled from 'styled-components';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getBusinesses } from './features/businessesView/businessesViewSlice';
 import { useAppDispatch } from './app/hooks';
-
+import { CustomErrorBoundary } from './components/shared/customErrorBoundary/CustomErrorBoundary';
 
 const StyledWrapper = styled.div`
     height: 100vh;
@@ -25,10 +25,12 @@ function App() {
 		<StyledWrapper>
 			<BrowserRouter>
 				<Header />
-				<Routes>
-					<Route path={RoutingEnum.INITIAL} element={<BusinessesView />} />
-					<Route path={`${RoutingEnum.BUSINESS}/:id`} element={<BusinessItem />} />
-				</Routes>
+				<CustomErrorBoundary>
+					<Routes>
+						<Route path={RoutingEnum.INITIAL} element={<BusinessesView />} />
+						<Route path={`${RoutingEnum.BUSINESS}/:id`} element={<BusinessItem />} />
+					</Routes>
+				</CustomErrorBoundary>
 			</BrowserRouter>
 		</StyledWrapper>
 	);
